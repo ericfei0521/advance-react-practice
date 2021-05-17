@@ -10,11 +10,10 @@ const Button = styled.button`
 `;
 const Toggle = ({ className, toggled, onChange }) => {
     return (
-        <div className={className}>
+        <div className={className} onClick={onChange}>
             <Button
                 className={`toggle-button ${toggled ? "toggle-on" : ""}`}
                 theme={toggled ? { main: "white" } : { main: "black" }}
-                onClick={onChange}
             ></Button>
         </div>
     );
