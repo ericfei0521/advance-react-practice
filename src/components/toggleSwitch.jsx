@@ -4,27 +4,27 @@ const Button = styled.button`
     height: 65px;
     box-sizing: border-box;
     border-radius: 50%;
-    border: 1px solid gray;
+    border: none;
     transition: 0.5s;
-    background-color: ${(props) => props.theme.main};
+    background-color: ${(props) => props.theme};
+    box-shadow: 0 0 10px gray;
 `;
-const Toggle = ({ className, toggled, onChange }) => {
+const Switch = ({ className, toggled, onChange }) => {
     return (
         <div className={className} onClick={onChange}>
             <Button
                 className={`toggle-button ${toggled ? "toggle-on" : ""}`}
-                theme={toggled ? { main: "white" } : { main: "black" }}
+                theme={toggled ? "black" : "gray"}
             ></Button>
         </div>
     );
 };
 
-export default styled(Toggle)`
+export default styled(Switch)`
     position: absolute;
     top: 50%;
     right: 0;
     left: 0;
-    display: block;
     width: 180px;
     height: 70px;
     margin: 0 auto;
@@ -38,4 +38,5 @@ export default styled(Toggle)`
         transform: translateX(110px);
         transition: 0.5s;
     }
+    box-shadow: 0 0 10px gray;
 `;
